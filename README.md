@@ -1,12 +1,15 @@
-# Twitter_Sentiment_Project
+# Twitter Sentiment Project
+<p align="center"><img src="https://github.com/seanisthegood/Twitter_Sentiment_Project/blob/main/Images/Tweet%20Emotions.jpeg" width="500" height="300">
 
-This project is an attempt to build a sentiment classifier for Tweets. It is much a preprocessing project as anything else. The project centered around creating a model that could detect the sentiment of Tweets and predict on a test set. 
+</p>This project is an attempt to build a sentiment classifier for Tweets. It is much a preprocessing project as anything else. The project centered around creating a model that could detect the sentiment of Tweets and predict on a test set. 
 
 # Business Problem
 
 The goal of this project was to create a classifier that could attempt to identify negative tweets at a live event. The hope is that the classifier could aid a social media manager in responding to a criticism or a crisis in real time. A nimble and quick classifier would be able to take in a bulk amount of tweets, process them, and then identify the offending tweets. Social media managers could then assess the situation and respond to users in a timely fashion.
 
 # The Dataset
+![alt text](https://github.com/seanisthegood/Twitter_Sentiment_Project/blob/main/Images/TargetBreakdownRaw.png)
+![alt text](https://github.com/seanisthegood/Twitter_Sentiment_Project/blob/main/Images/SentimentAfterProcessing.png)
 
 The dataset for this project was tweets from South by Southwest in 2011. Due to initally low scores for the model I augemented this dataset with data from Crowd Flower, another dataset. This was neccesary as the initial dataset was highly imbalanced and needed more negative examples to butress the models training data.
 
@@ -15,12 +18,16 @@ The dataset for this project was tweets from South by Southwest in 2011. Due to 
 The tweets had to go through thoughrough preprocessing for the modeling. The pre-processing process is in itself a place of measurement and decision points. The tweets had to have odd characters and emojis removed as well as HTML characters. Various punctuation was stripped, whitespaces removed, text had to be lower-cased. For the best performances I relied on the sklearn TFIDF vectorizer's processing after I had done intitial preprocessing.
 
 ## Brand Processing
-
+![alt text](https://github.com/seanisthegood/Twitter_Sentiment_Project/blob/main/Images/SentimentbyProductPreProcessed.png)
 As mentioned above the dataset is divided into Sentiment, Object of Sentiment, and Tweet Text. The Object of Sentiment or Product was not used in the modeling, but I thought it would be helpful to identitfy relevent tweets. I was able to expand the Product column greatly, eliminaiting irrelevent tweets from the model. 
 
 ## Model Target
 
 I created a binary classifier for this project, for future work it would be interesting to expand -- but aiming to identify negative tweets, I combined the positive and neutral labeled tweets into one target. This essentially divides the model target into Negative and Positive/Neutral. Better scores could certainly been achieved by dropping a Neutral targets, but in a real world situation we would not have the luxery ahead of time of knowing which tweets had which sentiment.
+
+
+![alt text](https://github.com/seanisthegood/Twitter_Sentiment_Project/blob/main/Images/BinaryBeforeNegative.png)
+![alt text](https://github.com/seanisthegood/Twitter_Sentiment_Project/blob/main/Images/BinaryAfterNegative.png)
 
 # Scoring
 
@@ -38,8 +45,12 @@ I performed several iterations of Neural Network models with LSTM layers. I empl
 
 # Final Model Selection
 
+![alt text](https://github.com/seanisthegood/Twitter_Sentiment_Project/blob/main/Images/FinalConfusionMatrix.png)
+
 My final model ended up being arguably the simplest model - a Logistic Regression using Bag-of-Words using unigrams achieved the best scores. Perhaps its simplicity was its strength. It scored over 80% on recall during cross-validation and over 83% on the final test set. From this model I was able analyze the frequencies for relevent products. 
 
+![alt text](https://github.com/seanisthegood/Twitter_Sentiment_Project/blob/main/Images/PositiveCoefficients.png)
+![alt text](https://github.com/seanisthegood/Twitter_Sentiment_Project/blob/main/Images/NegativeCoefficients.png)
 # Further Work
 
 * Increase Dimensions with Glove Model
