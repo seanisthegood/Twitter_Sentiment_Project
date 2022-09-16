@@ -37,10 +37,10 @@ I looked to recall score as the guiding metric for this project with an eye to p
 
 ## Notebooks 
 
-EDA Notebook
-Conventional Models
-Neural Network Models
-Final Model Selection and Interpretation
+* [EDA Notebook](Project_Notebooks/EDA_and_PreProcessing.ipynb)
+* [Conventional Models](Project_Notebooks/Modeling_Notebook.ipynb)
+* [Neural Network Models](Project_Notebooks/Neural_Network.ipynb)
+* [Final Model Selection and Interpretation](Project_Notebooks/FinalNotebook.ipynb)
 
 ## Data
 
