@@ -33,17 +33,42 @@ I created a binary classifier for this project, for future work it would be inte
 
 I looked to recall score as the guiding metric for this project with an eye to precision. As in previous projects I employed a custom Beta-2 scorer to achieve optimal recall without sacrificing precision. I used stratified 5-fold cross validation on the training data to understand overfitting. I also split the data into training/validation/testing. I scored each model on the validation set if it seemed promising on the cross-validation. After making my final model selection I tested it on the testing data. 
 
-# Modeling 
+# Repository 
 
-## Conventional Models
+## Notebooks 
 
-I attempted several different models including Logistic Regression, Naive Bayes, Support Vector Machines, and Random Forrest. I tuned hyperparameters for each model as well as varied Bag-of-Words vs TFIDF vectorization. I tracked the model scores and then added the additional negative tweets when I encountered low scores on cross-validation and the validation set. 
+EDA Notebook
+Conventional Models
+Neural Network Models
+Final Model Selection and Interpretation
 
-## LSTM Neural Network Model
+## Data
 
-I performed several iterations of Neural Network models with LSTM layers. I employed early stopping to adjust for overfitting. I scored these models on validation splits and attempted to put these models through the same processing as the other models, though I was unable to successfuly perform proper cross-validation on the Neural Network models. Early stopping helped prevent overfitting and guided my selection. I used a pretrained glove vectors of fifty dimensions and the scores were comperable to the scores achieved with a over 10k dimensions on the final models used.
+The data folder contains the inital Tweets for the project as well as the supplemental Tweets. There is a GitIgnore for the Glove Vectors that are too large for Github and are readily available elsewhere. 
 
-# Final Model Selection
+## PDFs
+
+The PDFs folder contains copies of my work as well as my presentation slides.
+
+## Images
+
+The image folder contains charts and images used for the project and the presentation.
+
+## Saved Models
+
+I saved some particularly long grid search models and saved my final model as well as my final LSTM model.
+
+### EDA Notebook
+
+The EDA/Preprocessing notebook contains an exploration of the dataset as well as work to eliminate nulls, populate the product column and ready the text for modeling. The Modeling notebook contains conventional models where I experimented with Bag-of-Words vs TFIDF. I attempted several different models including Logistic Regression, Naive Bayes, Support Vector Machines, and Random Forrest. I tracked the model scores and then added the additional negative tweets when I encountered low scores on cross-validation and the validation set. 
+
+### LSTM Neural Network Model
+
+I created another notebook to work with LSTM neural networks for the first time. These models almost acheived as good scores as my best conventional model and I will look to working with them in the future, however, I was unable to perform cross-validation on these models, and the scores of the best Logistic Regression compared with my best LSTM model favorably.
+
+### Final Model Selection and Interpretation 
+
+I summarized my work in the final notebook and it has links to the other notebooks along with exploration of the final model. I epxlored the top features and produced wordclouds for each of the important brands.
 
 ![alt text](https://github.com/seanisthegood/Twitter_Sentiment_Project/blob/main/Images/FinalConfusionMatrix.png)
 
