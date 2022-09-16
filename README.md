@@ -6,11 +6,11 @@
 # Repository 
 
 ## Notebooks 
-
+* [Final Model Selection and Interpretation](Project_Notebooks/FinalNotebook.ipynb)
 * [EDA Notebook](Project_Notebooks/EDA_and_PreProcessing.ipynb)
 * [Conventional Models](Project_Notebooks/Modeling_Notebook.ipynb)
 * [Neural Network Models](Project_Notebooks/Neural_Network.ipynb)
-* [Final Model Selection and Interpretation](Project_Notebooks/FinalNotebook.ipynb)
+
 
 ## Data
 
